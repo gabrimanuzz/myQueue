@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace myQueue
 {
-    public class Queue<T> : IQueue<T>
+    public class myQueue<T> : IQueue<T>
     {
         private Node<T>? head;
 
         public int Count;
 
-        public Queue()
+        public myQueue()
         {
             head = null;
         }
