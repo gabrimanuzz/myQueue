@@ -23,7 +23,7 @@ namespace myQueue
             Count = 0;
         }
 
-        public T Dequeue()
+        public virtual T Dequeue()
         {
             if (head == null)
                 throw new Exception("lista non valorizzata");
@@ -40,7 +40,7 @@ namespace myQueue
             return value;
         }
 
-        public void Enqueue(T item)
+        public virtual void Enqueue(T item)
         {
             if (head == null)
             {
