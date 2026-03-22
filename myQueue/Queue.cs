@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QueueManuzzato
+namespace myQueue
 {
-    internal class Queue<T> : IQueue<T>
+    public class Queue<T> : IQueue<T>
     {
         private Node<T>? head;
 
