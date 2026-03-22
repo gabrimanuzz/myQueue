@@ -10,7 +10,7 @@ namespace myQueue
     {
         private Node<T>? head;
 
-        public int Count;
+        public int Count { get; private set; }
 
         public myQueue()
         {
