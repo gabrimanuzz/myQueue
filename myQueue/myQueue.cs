@@ -57,7 +57,7 @@ namespace myQueue
             Count++;
         }
 
-        public bool IsEmpty()
+        public virtual bool IsEmpty()
         {
             return head == null;
         }
