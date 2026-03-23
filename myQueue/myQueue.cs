@@ -9,18 +9,21 @@ namespace myQueue
     public class myQueue<T> : IQueue<T>
     {
         private Node<T>? head;
+        private Node<T>? tail;
 
         public int Count { get; private set; }
 
         public myQueue()
         {
             head = null;
+            tail = null;
         }
 
         public void Clear()
         {
             head = null;
             Count = 0;
+            tail = null;
         }
 
         public virtual T Dequeue()
@@ -30,10 +33,9 @@ namespace myQueue
 
             T value = head.Data;
 
-            if (head.Next == null)
-                head = null;
-            else
-                head = head.Next;
+            head = head.Next;
+            if (head == null)
+                tail = null;
 
             Count--;
 
@@ -42,19 +44,15 @@ namespace myQueue
 
         public virtual void Enqueue(T item)
         {
+            var newNode = new Node<T>(item);
+            
             if (head == null)
+                head = tail = newNode;
+            else
             {
-                head = new Node<T>(item);
-                Count++;
-                return;
+                tail!.Next = newNode;
+                tail = newNode;
             }
-
-            Node<T> node = head;
-
-            while (node.Next != null)
-                node = node.Next;
-
-            node.Next = new Node<T>(item);
 
             Count++;
         }
