@@ -64,7 +64,7 @@ namespace myQueue
             return head == null;
         }
 
-        public T Peek()
+        public virtual T Peek()
         {
             if (head == null)
                 throw new Exception("Lista non valorizzata");
